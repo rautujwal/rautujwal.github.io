@@ -111,18 +111,219 @@
 
     .section-divider{height:1px;background:var(--color-divider);border:none;margin:0}
 
-    /* EXPERIENCE */
-    .experience{padding-block:clamp(var(--space-12),8vw,var(--space-20));background:var(--color-surface)}
-    .experience-card{background:var(--color-bg);border:1px solid var(--color-divider);border-radius:var(--radius-xl);padding:clamp(var(--space-6),4vw,var(--space-10));display:flex;flex-direction:column;gap:var(--space-5)}
-    .experience-card__header{display:flex;justify-content:space-between;align-items:flex-start;gap:var(--space-4);flex-wrap:wrap}
-    .experience-card__title{font-family:var(--font-display);font-size:var(--text-xl);font-weight:600;letter-spacing:-.01em;color:var(--color-text)}
-    .experience-card__meta{font-size:var(--text-sm);color:var(--color-text-muted)}
-    .experience-card__image{border-radius:var(--radius-lg);border:1px solid var(--color-divider);overflow:hidden}
-    .experience-card__image img{width:100%;height:auto;display:block}
-    .experience-card__section-title{font-size:var(--text-sm);font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--color-text-faint);margin-bottom:var(--space-2);margin-top:var(--space-4)}
-    .experience-card__items{font-size:var(--text-base);color:var(--color-text-muted);line-height:1.7}
-    .experience-card__items strong{color:var(--color-text)}
-    .experience-card__reference{font-size:var(--text-sm);color:var(--color-text-muted);margin-top:var(--space-4);padding-top:var(--space-4);border-top:1px solid var(--color-divider)}
+   <!-- EXPERIENCE -->
+<section class="experience" id="experience" aria-label="Experience">
+  <div class="container">
+
+    <div class="section-header">
+      <span class="section-header__eyebrow">02</span>
+      <h2 class="section-header__title">Experience</h2>
+    </div>
+
+    <article class="experience-card fade-in" aria-label="BI Developer Intern at R2P Group">
+
+      <header class="experience-card__header">
+        <div>
+          <h3 class="experience-card__title">BI Developer Intern</h3>
+          <p class="experience-card__meta">
+            R2P Group · May 2026 – Aug 2026 · Sydney, Australia
+          </p>
+        </div>
+      </header>
+
+      <div class="experience-card__image">
+        <img
+          src="./project_architecture.png"
+          alt="V&amp;V Flightdeck metadata-driven architecture and closed-loop reverse ETL pipeline"
+        >
+      </div>
+
+      <section aria-label="V&V Flightdeck overview">
+        <h4 class="experience-card__section-title">
+          The V&amp;V Flightdeck
+          <span>(Centralized BI Platform)</span>
+        </h4>
+
+        <div class="experience-card__items">
+          <p>
+            <strong>Goal:</strong>
+            Unify fragmented Jira and Zephyr Scale data to monitor monthly
+            software releases.
+          </p>
+
+          <p>
+            <strong>Outcome:</strong>
+            Streamlined quality engineering by providing the Head of IT and
+            Engineering Leads with real-time visibility into release readiness
+            and delivery risks.
+          </p>
+        </div>
+      </section>
+
+      <section aria-label="Data engineering and reliability">
+        <h4 class="experience-card__section-title">
+          Data Engineering
+          <span>&amp; Pipeline Reliability</span>
+        </h4>
+
+        <div class="experience-card__items">
+          <p>
+            <strong>Architecture:</strong>
+            Designed a PostgreSQL Data Mart and incremental ETL pipelines to
+            track end-to-end SDLC metrics.
+          </p>
+
+          <p>
+            <strong>Reliability:</strong>
+            Orchestrated production-ready pipelines using Apache Airflow,
+            with automated logging and monitoring to improve maintainability
+            and simplify debugging.
+          </p>
+        </div>
+      </section>
+
+      <section aria-label="Reporting solutions">
+        <h4 class="experience-card__section-title">
+          Unified Reporting Solutions
+        </h4>
+
+        <div class="experience-card__items">
+          <p>
+            <strong>Implementation:</strong>
+            Developed a dual reporting architecture using Streamlit for
+            snapshots and Metabase for historical trends.
+          </p>
+
+          <p>
+            <strong>Feature:</strong>
+            Enabled users to track current release status and long-term
+            progression through a single unified reporting model.
+          </p>
+        </div>
+      </section>
+
+      <div class="experience-card__reference">
+        <span>Professional reference:</span>
+        Available from the Head of IT at R2P Group upon request.
+      </div>
+
+    </article>
+  </div>
+</section>
+
+<hr class="section-divider">
+
+
+<style>
+/* EXPERIENCE */
+.experience {
+  padding-block: clamp(var(--space-12), 8vw, var(--space-20));
+  background: var(--color-surface);
+}
+
+.experience-card {
+  background: var(--color-bg);
+  border: 1px solid var(--color-divider);
+  border-radius: var(--radius-xl);
+  padding: clamp(var(--space-6), 4vw, var(--space-10));
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+}
+
+.experience-card__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: var(--space-4);
+  flex-wrap: wrap;
+}
+
+.experience-card__title {
+  font-family: var(--font-display);
+  font-size: var(--text-xl);
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  color: var(--color-text);
+}
+
+.experience-card__meta {
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+}
+
+.experience-card__image {
+  width: 100%;
+  margin-block: var(--space-2) var(--space-4);
+  border: 1px solid var(--color-divider);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  background: var(--color-surface);
+}
+
+.experience-card__image img {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  opacity: 1;
+  visibility: visible;
+}
+
+.experience-card__section-title {
+  position: relative;
+  margin-top: var(--space-4);
+  margin-bottom: var(--space-3);
+  padding-left: var(--space-3);
+  border-left: 3px solid var(--color-text);
+  color: var(--color-text);
+  font-size: var(--text-sm);
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  line-height: 1.5;
+  text-transform: uppercase;
+}
+
+.experience-card__section-title span {
+  color: var(--color-text-muted);
+  font-weight: 500;
+}
+
+.experience-card__items {
+  font-size: var(--text-base);
+  color: var(--color-text-muted);
+  line-height: 1.7;
+}
+
+.experience-card__items p {
+  margin-bottom: var(--space-3);
+}
+
+.experience-card__items p:last-child {
+  margin-bottom: 0;
+}
+
+.experience-card__items strong {
+  color: var(--color-text);
+  font-weight: 600;
+}
+
+.experience-card__reference {
+  margin-top: var(--space-4);
+  padding: var(--space-4) var(--space-5);
+  border: 1px solid var(--color-divider);
+  border-radius: var(--radius-lg);
+  background: var(--color-surface);
+  color: var(--color-text-muted);
+  font-size: var(--text-sm);
+  line-height: 1.6;
+}
+
+.experience-card__reference span {
+  color: var(--color-text);
+  font-weight: 600;
+}
+</style>
 
     /* PROJECTS */
     .projects{padding-block:clamp(var(--space-12),8vw,var(--space-20));background:var(--color-surface)}
