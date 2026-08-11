@@ -214,7 +214,6 @@
 <hr class="section-divider">
 
 
-<style>
 /* EXPERIENCE */
 .experience {
   padding-block: clamp(var(--space-12), 8vw, var(--space-20));
@@ -270,13 +269,18 @@
   visibility: visible;
 }
 
+/* Highlighted subsection headings */
 .experience-card__section-title {
-  position: relative;
-  margin-top: var(--space-4);
+  display: block;
+  width: fit-content;
+  margin-top: var(--space-5);
   margin-bottom: var(--space-3);
-  padding-left: var(--space-3);
-  border-left: 3px solid var(--color-text);
-  color: var(--color-text);
+  padding: 0.55rem 0.85rem;
+  border: 1px solid var(--color-accent, #7c9cff);
+  border-left: 4px solid var(--color-accent, #7c9cff);
+  border-radius: 6px;
+  background: rgba(124, 156, 255, 0.12);
+  color: var(--color-accent, #7c9cff);
   font-size: var(--text-sm);
   font-weight: 700;
   letter-spacing: 0.06em;
@@ -289,6 +293,7 @@
   font-weight: 500;
 }
 
+/* Content below each heading */
 .experience-card__items {
   font-size: var(--text-base);
   color: var(--color-text-muted);
@@ -308,22 +313,22 @@
   font-weight: 600;
 }
 
+/* Highlighted professional reference */
 .experience-card__reference {
-  margin-top: var(--space-4);
+  margin-top: var(--space-5);
   padding: var(--space-4) var(--space-5);
-  border: 1px solid var(--color-divider);
+  border: 1px solid var(--color-accent, #7c9cff);
   border-radius: var(--radius-lg);
-  background: var(--color-surface);
+  background: rgba(124, 156, 255, 0.1);
   color: var(--color-text-muted);
   font-size: var(--text-sm);
   line-height: 1.6;
 }
 
 .experience-card__reference span {
-  color: var(--color-text);
-  font-weight: 600;
+  color: var(--color-accent, #7c9cff);
+  font-weight: 700;
 }
-</style>
 
     /* PROJECTS */
     .projects{padding-block:clamp(var(--space-12),8vw,var(--space-20));background:var(--color-surface)}
