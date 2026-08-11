@@ -111,7 +111,7 @@
 
     .section-divider{height:1px;background:var(--color-divider);border:none;margin:0}
 
-   <!-- EXPERIENCE -->
+  <!-- EXPERIENCE -->
 <section class="experience" id="experience" aria-label="Experience">
   <div class="container">
 
@@ -213,7 +213,7 @@
 
 <hr class="section-divider">
 
-
+<style>
 /* EXPERIENCE */
 .experience {
   padding-block: clamp(var(--space-12), 8vw, var(--space-20));
@@ -265,22 +265,20 @@
   width: 100%;
   max-width: 100%;
   height: auto;
-  opacity: 1;
-  visibility: visible;
 }
 
 /* Highlighted subsection headings */
-.experience-card__section-title {
+.experience .experience-card__section-title {
   display: block;
   width: fit-content;
   margin-top: var(--space-5);
   margin-bottom: var(--space-3);
   padding: 0.55rem 0.85rem;
-  border: 1px solid var(--color-accent, #7c9cff);
-  border-left: 4px solid var(--color-accent, #7c9cff);
+  border: 1px solid #7c9cff;
+  border-left: 4px solid #7c9cff;
   border-radius: 6px;
   background: rgba(124, 156, 255, 0.12);
-  color: var(--color-accent, #7c9cff);
+  color: #7c9cff;
   font-size: var(--text-sm);
   font-weight: 700;
   letter-spacing: 0.06em;
@@ -288,12 +286,12 @@
   text-transform: uppercase;
 }
 
-.experience-card__section-title span {
-  color: var(--color-text-muted);
+.experience .experience-card__section-title span {
+  color: #b8c2d1;
   font-weight: 500;
 }
 
-/* Content below each heading */
+/* Text below each heading */
 .experience-card__items {
   font-size: var(--text-base);
   color: var(--color-text-muted);
@@ -310,14 +308,14 @@
 
 .experience-card__items strong {
   color: var(--color-text);
-  font-weight: 600;
+  font-weight: 700;
 }
 
 /* Highlighted professional reference */
-.experience-card__reference {
+.experience .experience-card__reference {
   margin-top: var(--space-5);
   padding: var(--space-4) var(--space-5);
-  border: 1px solid var(--color-accent, #7c9cff);
+  border: 1px solid #7c9cff;
   border-radius: var(--radius-lg);
   background: rgba(124, 156, 255, 0.1);
   color: var(--color-text-muted);
@@ -325,10 +323,11 @@
   line-height: 1.6;
 }
 
-.experience-card__reference span {
-  color: var(--color-accent, #7c9cff);
+.experience .experience-card__reference span {
+  color: #7c9cff;
   font-weight: 700;
 }
+</style>
 
     /* PROJECTS */
     .projects{padding-block:clamp(var(--space-12),8vw,var(--space-20));background:var(--color-surface)}
