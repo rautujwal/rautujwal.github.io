@@ -111,7 +111,7 @@
 
     .section-divider{height:1px;background:var(--color-divider);border:none;margin:0}
 
-  <!-- EXPERIENCE -->
+ <!-- EXPERIENCE -->
 <section class="experience" id="experience" aria-label="Experience">
   <div class="container">
 
@@ -262,15 +262,13 @@
 .experience-card__image img {
   display: block;
   width: 100%;
-  max-width: 100%;
   height: auto;
 }
 
-/* Make the whole heading readable and highlighted */
+/* Entire subsection heading is highlighted */
 .experience-card__section-title {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.45rem;
+  display: inline-block;
+  width: fit-content;
   margin-top: var(--space-5);
   margin-bottom: var(--space-3);
   padding: 0.6rem 0.9rem;
@@ -286,13 +284,13 @@
   text-transform: uppercase;
 }
 
+/* This is the important fix: the span is also highlighted */
 .experience-card__section-title span {
-  color: #b8c2d1;
-  font-weight: 500;
-  letter-spacing: 0.03em;
+  color: #7c9cff;
+  font-weight: 700;
 }
 
-/* Keep body text normal */
+/* Normal body text */
 .experience-card__items {
   font-size: var(--text-base);
   color: var(--color-text-muted);
@@ -312,7 +310,7 @@
   font-weight: 700;
 }
 
-/* Highlight reference */
+/* Professional reference */
 .experience-card__reference {
   margin-top: var(--space-5);
   padding: var(--space-4) var(--space-5);
@@ -328,7 +326,7 @@
   color: #7c9cff;
   font-weight: 700;
 }
-</style>
+
 
     /* PROJECTS */
     .projects{padding-block:clamp(var(--space-12),8vw,var(--space-20));background:var(--color-surface)}
