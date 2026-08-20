@@ -569,6 +569,13 @@
             Streamlined quality engineering by providing the Head of IT and
             Engineering Leads with real-time visibility into release readiness
             and delivery risks.
+            
+            Redesigned reporting architecture: Replaced once-daily batch with idempotent hourly-refresh pipelines
+            using CDC and strict reconciliation. 24x freshness gain, shifting stakeholders from static reports to hourlyrefreshed insights.
+
+            Developed a PostgreSQL Data Mart with 3-layer architecture, using incremental ETL pipeline processing
+            240K+ records monthly across 300+ test cases and 30+ Jira tickets per Netspire release cycle.
+
           </p>
         </div>
       </section>
