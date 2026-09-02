@@ -1,0 +1,1222 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ujwal Raut | BI Developer & Data Analyst</title>
+  <meta name="description"
+    content="Ujwal Raut builds production data platforms and BI infrastructure. SQL, PostgreSQL, Python, Apache Airflow, Tableau. Based in Sydney, Australia.">
+  <meta property="og:title" content="Ujwal Raut | BI Developer & Data Analyst">
+  <meta property="og:description"
+    content="Production BI platforms, ETL pipelines, and reporting infrastructure. Master's graduate with real delivery experience.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0c0d10;
+      --surface: #13151a;
+      --surface-2: #1a1c23;
+      --border: #252830;
+      --text: #e8e9ec;
+      --text-muted: #8b8f9a;
+      --text-faint: #5c6070;
+      --accent: #4f98a3;
+      --accent-hover: #3d7a84;
+      --accent-soft: rgba(79, 152, 163, 0.12);
+      --radius-sm: 6px;
+      --radius-md: 10px;
+      --radius-lg: 14px;
+      --font: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      --max-width: 1000px;
+      --transition: 160ms ease;
+    }
+
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 80px;
+    }
+
+    body {
+      font-family: var(--font);
+      font-size: 15px;
+      line-height: 1.6;
+      color: var(--text);
+      background: var(--bg);
+      -webkit-font-smoothing: antialiased;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+      transition: color var(--transition), opacity var(--transition);
+    }
+
+    a:hover {
+      color: var(--text);
+    }
+
+    ::selection {
+      background: var(--accent-soft);
+    }
+
+    .container {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* NAV */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(12, 13, 16, 0.88);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 60px;
+    }
+
+    .nav-logo {
+      font-family: var(--font);
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--text);
+      letter-spacing: -0.2px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 6px;
+    }
+
+    .nav-links a {
+      font-size: 13.5px;
+      font-weight: 500;
+      color: var(--text-muted);
+      padding: 6px 12px;
+      border-radius: var(--radius-sm);
+    }
+
+    .nav-links a:hover {
+      color: var(--text);
+      background: var(--surface-2);
+    }
+
+    .nav-toggle {
+      display: none;
+      background: none;
+      border: none;
+      color: var(--text-muted);
+      cursor: pointer;
+    }
+
+    @media (max-width: 640px) {
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        right: 0;
+        background: var(--surface);
+        border-bottom: 1px solid var(--border);
+        flex-direction: column;
+        padding: 12px 24px;
+        gap: 4px;
+      }
+
+      .nav-links.open {
+        display: flex;
+      }
+
+      .nav-links a {
+        padding: 10px 0;
+      }
+
+      .nav-toggle {
+        display: block;
+      }
+    }
+
+    /* HERO */
+    .hero {
+      padding: 72px 0 56px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .hero-layout {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 56px;
+      align-items: start;
+    }
+
+    .hero-role {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 16px;
+    }
+
+    .hero-role-dot {
+      width: 6px;
+      height: 6px;
+      background: var(--accent);
+      border-radius: 50%;
+    }
+
+    .hero h1 {
+      font-family: var(--font);
+      font-size: clamp(32px, 4.5vw, 48px);
+      font-weight: 800;
+      line-height: 1.1;
+      letter-spacing: -0.03em;
+      margin-bottom: 8px;
+    }
+
+    .hero-name {
+      color: var(--text);
+    }
+
+    .hero-title {
+      font-family: var(--font);
+      font-size: 18px;
+      font-weight: 500;
+      color: var(--text-muted);
+      margin-bottom: 20px;
+    }
+
+    .hero-statement {
+      font-size: 16px;
+      color: var(--text-muted);
+      line-height: 1.65;
+      max-width: 540px;
+      margin-bottom: 28px;
+    }
+
+    .hero-statement strong {
+      color: var(--text);
+      font-weight: 600;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-bottom: 20px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 22px;
+      border-radius: var(--radius-sm);
+      font-size: 14px;
+      font-weight: 600;
+      transition: all var(--transition);
+      border: none;
+      cursor: pointer;
+    }
+
+    .btn-primary {
+      background: var(--accent);
+      color: #fff;
+    }
+
+    .btn-primary:hover {
+      background: var(--accent-hover);
+      color: #fff;
+    }
+
+    .btn-ghost {
+      background: transparent;
+      color: var(--text-muted);
+      border: 1px solid var(--border);
+    }
+
+    .btn-ghost:hover {
+      border-color: var(--text-faint);
+      color: var(--text);
+    }
+
+    .hero-socials {
+      display: flex;
+      gap: 18px;
+    }
+
+    .hero-socials a {
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--text-faint);
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .hero-socials a:hover {
+      color: var(--text);
+    }
+
+    .hero-photo {
+      flex-shrink: 0;
+    }
+
+    .hero-photo img {
+      width: 140px;
+      height: 140px;
+      object-fit: cover;
+      border-radius: var(--radius-md);
+      border: 1px solid var(--border);
+    }
+
+    @media (max-width: 720px) {
+      .hero-layout {
+        grid-template-columns: 1fr;
+        gap: 28px;
+      }
+
+      .hero-photo {
+        order: -1;
+      }
+
+      .hero-photo img {
+        width: 100px;
+        height: 100px;
+      }
+    }
+
+    /* PROOF STRIP */
+    .proof-strip {
+      padding: 32px 0;
+      border-bottom: 1px solid var(--border);
+      background: var(--surface);
+    }
+
+    .proof-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 24px;
+    }
+
+    .proof-item {
+      text-align: center;
+    }
+
+    .proof-number {
+      font-family: var(--font);
+      font-size: 22px;
+      font-weight: 800;
+      color: var(--text);
+      line-height: 1.2;
+      margin-bottom: 4px;
+    }
+
+    .proof-label {
+      font-size: 12px;
+      color: var(--text-faint);
+      font-weight: 500;
+      line-height: 1.4;
+    }
+
+    @media (max-width: 720px) {
+      .proof-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+      }
+
+      .proof-item {
+        text-align: left;
+      }
+    }
+
+    /* SECTIONS */
+    section {
+      padding: 64px 0;
+    }
+
+    .section-header {
+      margin-bottom: 36px;
+    }
+
+    .eyebrow {
+      display: block;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 8px;
+    }
+
+    .section-header h2 {
+      font-family: var(--font);
+      font-size: 28px;
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      line-height: 1.2;
+    }
+
+    .section-subtitle {
+      font-size: 15px;
+      color: var(--text-muted);
+      margin-top: 6px;
+    }
+
+    /* FEATURED WORK */
+    .featured-work {
+      background: var(--surface);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .project-summary {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 32px;
+      margin-bottom: 36px;
+    }
+
+    .summary-block h3 {
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--text-faint);
+      margin-bottom: 10px;
+    }
+
+    .summary-block p {
+      font-size: 14.5px;
+      color: var(--text-muted);
+      line-height: 1.65;
+    }
+
+    .summary-block p strong {
+      color: var(--text);
+      font-weight: 600;
+    }
+
+    .project-meta {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-bottom: 28px;
+    }
+
+    .meta-tag {
+      font-size: 12px;
+      font-weight: 500;
+      color: var(--text-faint);
+      background: var(--bg);
+      border: 1px solid var(--border);
+      padding: 4px 12px;
+      border-radius: var(--radius-sm);
+    }
+
+    .arch-diagram {
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      margin-bottom: 28px;
+      background: #fff;
+      max-width: 800px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .arch-diagram img {
+      width: 100%;
+      display: block;
+      height: auto;
+    }
+
+    .arch-diagram-small {
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      margin-bottom: 28px;
+      background: #fff;
+      max-width: 500px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .arch-diagram-small img {
+      width: 100%;
+      display: block;
+      height: auto;
+    }
+
+    .arch-caption {
+      font-size: 12px;
+      color: var(--text-faint);
+      padding: 10px 16px;
+      background: var(--surface-2);
+      border-top: 1px solid var(--border);
+    }
+
+    /* ACCORDION */
+    details {
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      background: var(--bg);
+      margin-bottom: 10px;
+      overflow: hidden;
+    }
+
+    summary {
+      list-style: none;
+      padding: 16px 20px;
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--text);
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      transition: background var(--transition);
+    }
+
+    summary:hover {
+      background: var(--surface-2);
+    }
+
+    summary::-webkit-details-marker {
+      display: none;
+    }
+
+    summary::after {
+      content: '+';
+      font-size: 18px;
+      color: var(--text-faint);
+      font-weight: 400;
+      transition: transform var(--transition);
+    }
+
+    details[open] summary::after {
+      content: '−';
+    }
+
+    .accordion-body {
+      padding: 0 20px 20px;
+      font-size: 14.5px;
+      color: var(--text-muted);
+      line-height: 1.7;
+    }
+
+    .accordion-body p {
+      margin-bottom: 10px;
+    }
+
+    .accordion-body p:last-child {
+      margin-bottom: 0;
+    }
+
+    .accordion-body strong {
+      color: var(--text);
+      font-weight: 600;
+    }
+
+    @media (max-width: 720px) {
+      .project-summary {
+        grid-template-columns: 1fr;
+        gap: 20px;
+      }
+    }
+
+    /* PROJECT BLOCKS (same strategy as featured work) */
+    .project-block {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: clamp(28px, 4vw, 40px);
+      margin-bottom: 20px;
+    }
+
+    .project-block:last-child {
+      margin-bottom: 0;
+    }
+
+    .project-block__header {
+      margin-bottom: 24px;
+    }
+
+    .project-block__tag {
+      display: inline-block;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 8px;
+    }
+
+    .project-block__title {
+      font-family: var(--font);
+      font-size: 22px;
+      font-weight: 800;
+      line-height: 1.2;
+      letter-spacing: -0.02em;
+    }
+
+    .project-block__link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 13px;
+      font-weight: 600;
+      margin-top: 20px;
+    }
+
+    .workflow-box {
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 16px 20px;
+      margin: 16px 0;
+      font-size: 13px;
+      color: var(--text-muted);
+      line-height: 1.8;
+    }
+
+    .workflow-box strong {
+      color: var(--text);
+      font-weight: 600;
+    }
+
+    /* SKILLS */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 32px;
+    }
+
+    .skill-category h3 {
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--text-faint);
+      margin-bottom: 14px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .skill-category ul {
+      list-style: none;
+    }
+
+    .skill-category li {
+      font-size: 14px;
+      color: var(--text-muted);
+      padding: 5px 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .skill-category li:last-child {
+      border-bottom: none;
+    }
+
+    @media (max-width: 720px) {
+      .skills-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* EDUCATION */
+    .edu-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 28px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 24px;
+    }
+
+    .edu-card h3 {
+      font-family: var(--font);
+      font-size: 20px;
+      font-weight: 800;
+      margin-bottom: 4px;
+    }
+
+    .edu-card p {
+      font-size: 14px;
+      color: var(--text-muted);
+    }
+
+    .edu-wam {
+      text-align: right;
+    }
+
+    .edu-wam-value {
+      font-family: var(--font);
+      font-size: 32px;
+      font-weight: 800;
+      color: var(--accent);
+      line-height: 1;
+    }
+
+    .edu-wam-label {
+      font-size: 12px;
+      color: var(--text-faint);
+      margin-top: 4px;
+    }
+
+    @media (max-width: 600px) {
+      .edu-card {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .edu-wam {
+        text-align: left;
+      }
+    }
+
+    /* CONTACT */
+    .contact {
+      background: var(--surface);
+      border-top: 1px solid var(--border);
+      text-align: center;
+    }
+
+    .contact h2 {
+      font-family: var(--font);
+      font-size: 28px;
+      font-weight: 800;
+      margin-bottom: 12px;
+    }
+
+    .contact>.container>p {
+      color: var(--text-muted);
+      font-size: 15px;
+      max-width: 520px;
+      margin: 0 auto 28px;
+    }
+
+    .contact-actions {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    /* FOOTER */
+    footer {
+      padding: 24px 0;
+      border-top: 1px solid var(--border);
+      text-align: center;
+    }
+
+    footer p {
+      font-size: 12.5px;
+      color: var(--text-faint);
+    }
+  </style>
+</head>
+
+<body>
+
+  <nav>
+    <div class="container">
+      <div class="nav-inner">
+        <a href="#" class="nav-logo">Ujwal Raut</a>
+        <button class="nav-toggle" onclick="document.querySelector('.nav-links').classList.toggle('open')"
+          aria-label="Toggle menu">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="4" y1="8" x2="20" y2="8" />
+            <line x1="4" y1="16" x2="20" y2="16" />
+          </svg>
+        </button>
+        <div class="nav-links">
+          <a href="#work">Work</a>
+          <a href="#projects">Projects</a>
+          <a href="#skills">Skills</a>
+          <a href="#education">Education</a>
+          <a href="#contact">Contact</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <header class="hero">
+    <div class="container">
+      <div class="hero-layout">
+        <div>
+          <div class="hero-role">
+            <span class="hero-role-dot"></span>
+            BI Developer / Data Analyst
+          </div>
+          <h1>
+            <span class="hero-name">Ujwal Raut</span>
+          </h1>
+          <div class="hero-title">Production data platforms for technical and business teams</div>
+          <p class="hero-statement">
+            I build end-to-end BI infrastructure that turns fragmented operational data into reliable reporting. At
+            <strong>R2P Group</strong>, I delivered a production platform processing <strong>240K+ records
+              monthly</strong> with hourly refresh. That replaced daily batch reporting and gave the Head of IT and
+            Engineering teams live visibility into release readiness.
+          </p>
+          <div class="hero-actions">
+            <a href="https://raw.githubusercontent.com/rautujwal/rautujwal.github.io/main/ujwal_raut_resume%20.pdf"
+              target="_blank" class="btn btn-primary">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+                <polyline points="7 10 12 15 17 10" />
+                <line x1="12" y1="15" x2="12" y2="3" />
+              </svg>
+              View Resume
+            </a>
+            <a href="#work" class="btn btn-ghost">View Work</a>
+          </div>
+          <div class="hero-socials">
+            <a href="https://www.linkedin.com/in/rautujwal/" target="_blank" rel="noopener">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
+                <rect x="2" y="9" width="4" height="12" />
+                <circle cx="4" cy="4" r="2" />
+              </svg>
+              LinkedIn
+            </a>
+            <a href="https://github.com/rautujwal" target="_blank" rel="noopener">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path
+                  d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22" />
+              </svg>
+              GitHub
+            </a>
+            <a href="mailto:rautujwal001@gmail.com">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                <polyline points="22,6 12,13 2,6" />
+              </svg>
+              rautujwal001@gmail.com
+            </a>
+          </div>
+        </div>
+        <div class="hero-photo">
+          <img src="https://raw.githubusercontent.com/rautujwal/rautujwal.github.io/main/IMG_0712%20(1).jpg"
+            alt="Ujwal Raut professional photo">
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div class="proof-strip">
+    <div class="container">
+      <div class="proof-grid">
+        <div class="proof-item">
+          <div class="proof-number">240K+</div>
+          <div class="proof-label">Records processed monthly</div>
+        </div>
+        <div class="proof-item">
+          <div class="proof-number">24x</div>
+          <div class="proof-label">Reporting freshness gain</div>
+        </div>
+        <div class="proof-item">
+          <div class="proof-number">Production</div>
+          <div class="proof-label">BI platform delivered</div>
+        </div>
+        <div class="proof-item">
+          <div class="proof-number">Head of IT</div>
+          <div class="proof-label">Engineering Lead & QA team stakeholders</div>
+        </div>
+        <div class="proof-item">
+          <div class="proof-number">End to end</div>
+          <div class="proof-label">Pipeline ownership</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <section class="featured-work" id="work">
+    <div class="container">
+      <div class="section-header">
+        <span class="eyebrow">Featured Production Work</span>
+        <h2>V&V Flightdeck</h2>
+        <p class="section-subtitle">Centralized BI Platform / R2P Group / Sydney / May 2026 to Aug 2026</p>
+      </div>
+
+      <div class="project-summary">
+        <div class="summary-block">
+          <h3>Problem</h3>
+          <p>Release data was fragmented across <strong>Jira tickets</strong> and <strong>Zephyr Scale test
+              cases</strong>. The Head of IT, Engineering Leads, and QA teams had no unified view of release readiness,
+            defect verification, or regression trends for their monthly Netspire release. Reporting was a once-daily
+            batch, which was too slow for release decisions.</p>
+        </div>
+        <div class="summary-block">
+          <h3>What I Built</h3>
+          <p>A <strong>3-layer PostgreSQL data mart</strong> with incremental, idempotent ETL pipelines orchestrated by
+            <strong>Apache Airflow</strong>. CDC and strict reconciliation ensure data accuracy. Dual reporting via
+            <strong>Streamlit</strong> for real-time snapshots and <strong>Metabase</strong> for historical trends.
+          </p>
+        </div>
+        <div class="summary-block">
+          <h3>Outcome</h3>
+          <p>Replaced daily batch reporting with <strong>hourly refresh</strong>, a <strong>24x increase in refresh
+              frequency</strong>. The Head of IT, Engineering Leads, and QA teams now monitor release readiness and
+            catch delivery risks before deployment. The platform processes <strong>240K+ records monthly</strong> across
+            300+ test cases and 30+ Jira tickets per <strong>Netspire</strong> release cycle.</p>
+        </div>
+      </div>
+
+      <div class="project-meta">
+        <span class="meta-tag">PostgreSQL</span>
+        <span class="meta-tag">Apache Airflow</span>
+        <span class="meta-tag">Python</span>
+        <span class="meta-tag">CDC</span>
+        <span class="meta-tag">Idempotent ETL</span>
+        <span class="meta-tag">Streamlit</span>
+        <span class="meta-tag">Metabase</span>
+        <span class="meta-tag">REST APIs</span>
+      </div>
+
+      <div class="arch-diagram">
+        <img src="https://raw.githubusercontent.com/rautujwal/rautujwal.github.io/main/project_architecture.JPG"
+          alt="V&V Flightdeck system architecture diagram showing the complete data pipeline from Jira and Zephyr Scale APIs through extraction, staging, transformation, and production layers to Streamlit and Metabase reporting">
+      </div>
+
+      <div class="arch-diagram">
+        <img src="https://raw.githubusercontent.com/rautujwal/rautujwal.github.io/main/ui%20image%20.jpeg"
+          alt="Streamlit operational dashboard for release readiness monitoring">
+      </div>
+
+      <div class="arch-diagram">
+        <img src="https://raw.githubusercontent.com/rautujwal/rautujwal.github.io/main/dag%20image.jpeg"
+          alt="Apache Airflow DAG orchestration showing production pipeline scheduling">
+      </div>
+
+      <details>
+        <summary>Data Engineering & Pipeline Reliability</summary>
+        <div class="accordion-body">
+          <p><strong>Architecture:</strong> Designed a 3-layer PostgreSQL Data Mart (staging, production, admin/OLAP)
+            with incremental ETL pipelines and strict data lineage to track end-to-end SDLC metrics. Raw data lands in
+            an immutable staging layer before transformation, with a context-ID-driven reverse ETL loop feeding
+            transformed release data back into OLAP.</p>
+          <p><strong>Reliability:</strong> Orchestrated production-ready pipelines using Apache Airflow with
+            parameterized DAGs. Implemented automated logging and monitoring to improve maintainability and simplify
+            debugging. Hourly refresh ensures stakeholders always work with current data.</p>
+          <p><strong>Data Quality:</strong> CDC (Change Data Capture), idempotent merge/upsert operations, and strict
+            reconciliation between layers ensure that every record in the production mart is validated and traceable.
+          </p>
+        </div>
+      </details>
+
+      <details>
+        <summary>Unified Reporting Solutions</summary>
+        <div class="accordion-body">
+          <p><strong>Dual reporting architecture:</strong> Streamlit delivers real-time operational snapshots from a
+            context ID-driven transformation flow that collapses data to a <strong>1:1 project grain</strong> and loads
+            the final snapshot back to OLAP.
+            Metabase serves historical trend analysis and self-service exploration, allowing users to track current
+            release status and progression over time through the same reporting model.</p>
+          <p><strong>Feature:</strong> Users can monitor current release status and analyse progression over time
+            through a unified reporting model, with the final OLAP snapshot powering operational Streamlit reporting.
+          </p>
+        </div>
+      </details>
+
+      <details>
+        <summary>Stakeholders & Operational Use</summary>
+        <div class="accordion-body">
+          <p>The platform is actively used by the <strong>Head of IT</strong>, <strong>Engineering Leads & QA
+              teams</strong> to
+            streamline quality engineering for the monthly Netspire release at R2P Group.
+          </p>
+          <p><strong>Professional reference</strong> available from the Head of IT at R2P Group upon request.</p>
+        </div>
+      </details>
+    </div>
+  </section>
+
+  <section id="projects">
+    <div class="container">
+      <div class="section-header">
+        <span class="eyebrow">Selected Projects</span>
+        <h2>Additional Work</h2>
+      </div>
+
+      <!-- Project 1: Insurance -->
+      <article class="project-block">
+        <div class="project-block__header">
+          <div class="project-block__tag">SQL / Analytics / 1.05M Records</div>
+          <h3 class="project-block__title">Insurance Portfolio Review Prioritisation</h3>
+        </div>
+        <div class="project-summary">
+          <div class="summary-block">
+            <h3>Problem</h3>
+            <p>How would you prioritise 1.05M insurance policies when review effort is being spread evenly, regardless
+              of where claims are actually concentrated?</p>
+          </div>
+          <div class="summary-block">
+            <h3>What I Built</h3>
+            <p>A modular, rerunnable SQL workflow using baseline benchmarking, lift scoring, Pareto analysis, tenure
+              cohorts, decile analysis, and stability checks to systematically identify where claim concentration
+              existed.</p>
+          </div>
+          <div class="summary-block">
+            <h3>Outcome</h3>
+            <p>The top <strong>30% of policies generated 55% of total claims</strong>, with the top two deciles
+              accounting for 45%. Policy type, location, and tenure showed no meaningful concentration, indicating
+              segment and lifecycle factors were not primary drivers.
+              An interactive dashboard and model performance evaluation assessed potential revenue and customer loyalty
+              risk, creating a repeatable framework for targeted portfolio review.</p>
+          </div>
+          <div class="project-meta">
+            <span class="meta-tag">SQL</span>
+            <span class="meta-tag">Python</span>
+            <span class="meta-tag">Tableau</span>
+            <span class="meta-tag">Data Validation </span>
+            <span class="meta-tag">Pareto Analysis</span>
+            <span class="meta-tag">Cohort Analysis</span>
+            <span class="meta-tag">Decile Analysis</span>
+            <span class="meta-tag">Segmentation</span>
+          </div>
+          <a href="https://github.com/rautujwal/insurance-portfolio-review-prioritisation" class="project-block__link"
+            target="_blank" rel="noopener">
+            View on GitHub
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+              <polyline points="15 3 21 3 21 9" />
+              <line x1="10" y1="14" x2="21" y2="3" />
+            </svg>
+          </a>
+      </article>
+
+      <!-- Project 2: Vehicle Pricing -->
+      <article class="project-block">
+        <div class="project-block__header">
+          <div class="project-block__tag">Python / Decision Support / 8,128 Listings</div>
+          <h3 class="project-block__title">Operational Price Review Support</h3>
+        </div>
+        <div class="project-summary">
+          <div class="summary-block">
+            <h3>Problem</h3>
+            <p>How would you know whether a used vehicle's asking or offer price is fair, and what should you do if the
+              market data suggests it isn't?</p>
+          </div>
+          <div class="summary-block">
+            <h3>What I Built</h3>
+            <p>A model-driven pricing decision support system that estimates an expected market price, benchmarks a
+              proposed price using Z-score analysis to classify pricing risk, and provides plain-language guidance on
+              whether the price is reasonable, overpriced, or underpriced.</p>
+          </div>
+          <div class="summary-block">
+            <h3>Outcome</h3>
+            <p>Users can adjust the proposed price and instantly re-run the assessment, turning the model from a
+              one-time prediction into an <strong>iterative pricing decision-support tool</strong>. The system surfaces
+              where a price sits relative to the market and what that implies for negotiation or walk-away decisions.
+            </p>
+          </div>
+        </div>
+        <div class="workflow-box">
+          <strong>Closed-loop workflow:</strong><br>
+          Vehicle details → Pricing model → Expected market price → Proposed price → Z-score benchmarking → Risk
+          classification → Plain-language assessment → Recommendation → Price adjustment → Re-evaluation
+        </div>
+
+        <div class="project-meta">
+          <span class="meta-tag">Python</span>
+          <span class="meta-tag">pandas</span>
+          <span class="meta-tag">scikit-learn</span>
+          <span class="meta-tag">Streamlit</span>
+          <span class="meta-tag">Z-score Analysis</span>
+        </div>
+
+        <div class="arch-diagram-small">
+          <img src="https://raw.githubusercontent.com/rautujwal/rautujwal.github.io/main/project%20architecture.png"
+            alt="Operational Price Review Support architecture diagram" loading="lazy">
+        </div>
+        <a href="https://github.com/rautujwal/Used-Vehicle-Price-Review-Support" class="project-block__link"
+          target="_blank" rel="noopener">
+          View on GitHub
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+            <polyline points="15 3 21 3 21 9" />
+            <line x1="10" y1="14" x2="21" y2="3" />
+          </svg>
+        </a>
+      </article>
+
+      <!-- Project 3: Labour Market -->
+      <article class="project-block">
+        <div class="project-block__header">
+          <div class="project-block__tag">Tableau / Python / Labour Market</div>
+          <h3 class="project-block__title">Skills Shortage & Labour Market Analysis</h3>
+        </div>
+        <div class="project-summary">
+          <div class="summary-block">
+            <h3>Problem</h3>
+            <p>Are 485 graduate inflows helping ease Australia's labour-market pressure, and does the relationship vary
+              across occupation groups?</p>
+          </div>
+          <div class="summary-block">
+            <h3>What I Built</h3>
+            <p>Analysed IVI job-ad, ABS labour-force, and 485 Graduate Visa data across occupations and states from 2020
+              to 2025.
+              Used Python to clean and standardise the data, then built an interactive Tableau analytical story
+              comparing graduate inflows with labour-market pressure by occupation.</p>
+          </div>
+          <div class="summary-block">
+            <h3>Outcome</h3>
+            <p><strong>2022 was the peak pressure year</strong>, followed by a broad easing in labour-market pressure.
+              Professionals and Managers showed clearer cooling alongside increasing graduate inflows,
+              while other ANZSCO groups showed uneven alignment, indicating no consistent directional relationship
+              between graduate inflows and labour-market pressure across occupations.
+              The analysis highlights where graduate supply appears more aligned with easing pressure and where
+              shortages remain less responsive.</p>
+          </div>
+        </div>
+        <div class="project-meta">
+          <span class="meta-tag">Python</span>
+          <span class="meta-tag">Tableau</span>
+          <span class="meta-tag">pandas</span>
+          <span class="meta-tag">IVI Data</span>
+          <span class="meta-tag">ABS Statistics</span>
+        </div>
+        <a href="https://public.tableau.com/views/australialabourforceanalysis/Story1" class="project-block__link"
+          target="_blank" rel="noopener">
+          View Tableau Story
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+            <polyline points="15 3 21 3 21 9" />
+            <line x1="10" y1="14" x2="21" y2="3" />
+          </svg>
+        </a>
+      </article>
+
+    </div>
+  </section>
+
+  <section id="skills"
+    style="background: var(--surface); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);">
+    <div class="container">
+      <div class="section-header">
+        <span class="eyebrow">Capabilities</span>
+        <h2>Technical Skills</h2>
+      </div>
+      <div class="skills-grid">
+        <div class="skill-category">
+          <h3>Data & BI</h3>
+          <ul>
+            <li>SQL</li>
+            <li>PostgreSQL</li>
+            <li>Tableau</li>
+            <li>Power BI</li>
+            <li>Streamlit</li>
+            <li>Metabase</li>
+            <li>Excel</li>
+          </ul>
+        </div>
+        <div class="skill-category">
+          <h3>Data Engineering</h3>
+          <ul>
+            <li>Python</li>
+            <li>ETL / ELT</li>
+            <li>Incremental Loading</li>
+            <li>Data Modeling</li>
+            <li>Data Mart Development</li>
+            <li>Apache Airflow</li>
+            <li>REST API Integration</li>
+            <li>Data Quality & Reconciliation</li>
+            <li>Git / GitHub</li>
+            <li>Jira / Confluence</li>
+          </ul>
+        </div>
+        <div class="skill-category">
+          <h3>Analytics</h3>
+          <ul>
+            <li>KPI Analysis</li>
+            <li>Pareto Analysis</li>
+            <li>Cohort Analysis</li>
+            <li>Segmentation</li>
+            <li>Hypothesis Testing</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="education">
+    <div class="container">
+      <div class="section-header">
+        <span class="eyebrow">Education</span>
+        <h2>Master of Information Systems</h2>
+      </div>
+      <div class="edu-card">
+        <div>
+          <h3>Master of Information Systems</h3>
+          <p style="color: var(--accent); font-weight: 700; font-size: 14px; margin-bottom: 4px;">Major in Data
+            Analytics</p>
+          <p>Australian Institute of Higher Education, Sydney / Graduated July 2026</p>
+        </div>
+        <div class="edu-wam">
+          <div class="edu-wam-value">81.64</div>
+          <div class="edu-wam-label">Weighted Average Mark</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact" id="contact">
+    <div class="container">
+      <h2>Get in touch</h2>
+      <p>Open to Data Analyst, BI Analyst, BI Developer, and Analytics Engineer roles in Sydney. I am looking for teams
+        where the work is hands-on, the output is used by real stakeholders, and there is room to grow.</p>
+      <div class="contact-actions">
+        <a href="https://raw.githubusercontent.com/rautujwal/rautujwal.github.io/main/ujwal_raut_resume%20.pdf"
+          target="_blank" class="btn btn-primary">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+            <polyline points="7 10 12 15 17 10" />
+            <line x1="12" y1="15" x2="12" y2="3" />
+          </svg>
+          View Resume
+        </a>
+        <a href="https://www.linkedin.com/in/rautujwal/" target="_blank" class="btn btn-ghost">LinkedIn</a>
+        <a href="https://github.com/rautujwal" target="_blank" class="btn btn-ghost">GitHub</a>
+        <a href="mailto:rautujwal001@gmail.com" class="btn btn-ghost">Email</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <p>Ujwal Raut / Sydney, NSW, Australia</p>
+    </div>
+  </footer>
+
+</body>
+
+</html>
